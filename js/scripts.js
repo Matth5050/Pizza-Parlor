@@ -69,20 +69,63 @@ $(document).ready(function() {
         }
     })
 
+    function multiPizza(count) {
+        let Pizza1 = new Pizza(0,0,0);
+        let Pizza2 = new Pizza(0,0,0);
+        let Pizza3 = new Pizza(0,0,0);
+        const sizeInput = $("input:radio[name=size]:checked").val();
+        const sizeInput2 = $("input:radio[name=size2]:checked").val();
+        const sizeInput3 = $("input:radio[name=size3]:checked").val();
+        const pep = $("input:checkbox[name=pep]:checked").val();
+        const veg = $("input:checkbox[name=veg]:checked").val();
+        const plain = $("input:checkbox[name=plain]:checked").val();
+        if (count === '1') {
+            Pizza1.BasePrice();
+            Pizza1.SizeCalc(sizeInput);
+            Pizza1.Toppings(pep,veg,plain);
+            Pizza1.finalPrice();
+            displayText(Pizza1.sumPrice);
+            $('form#pizzaBuilder')[0].reset(); 
+        } else if (count === '2') {
+            Pizza1.BasePrice();
+            Pizza1.SizeCalc(sizeInput);
+            Pizza1.Toppings(pep,veg,plain);
+            Pizza1.finalPrice(); 
+            Pizza2.BasePrice();
+            Pizza2.SizeCalc(sizeInput2);
+            Pizza2.Toppings(pep,veg,plain);
+            Pizza2.finalPrice();
+            displayText(Pizza1.sumPrice + Pizza2.sumPrice);
+            $('form#pizzaBuilder')[0].reset();
+        } else if (count === '3') {
+            Pizza1.BasePrice();
+            Pizza1.SizeCalc(sizeInput);
+            Pizza1.Toppings(pep,veg,plain);
+            Pizza1.finalPrice();
+            Pizza2.BasePrice();
+            Pizza2.SizeCalc(sizeInput2);
+            Pizza2.Toppings(pep,veg,plain);
+            Pizza2.finalPrice();
+            Pizza3.BasePrice();
+            Pizza3.SizeCalc(sizeInput3);
+            Pizza3.Toppings(pep,veg,plain);
+            Pizza3.finalPrice();
+            displayText(Pizza1.sumPrice + Pizza2.sumPrice + Pizza3.sumPrice)
+            $('form#pizzaBuilder')[0].reset(); 
+        }
+    }
+
   $('form#pizzaBuilder').submit(function(event) {
     event.preventDefault();
-    
-    let testPizza = new Pizza(0,0,0);
-    const sizeInput = $("input:radio[name=size]:checked").val();
-    const pep = $("input:checkbox[name=pep]:checked").val();
-    const veg = $("input:checkbox[name=veg]:checked").val();
-    const plain = $("input:checkbox[name=plain]:checked").val();
-    
-    testPizza.BasePrice();
-    testPizza.SizeCalc(sizeInput);
-    testPizza.Toppings(pep,veg,plain);
-    testPizza.finalPrice();
-    displayText(testPizza.sumPrice);
-    $('form#pizzaBuilder')[0].reset();
+    // const pieCount = $("#count").val();
+    multiPizza($("#count").val());
+    // testPizza.BasePrice();
+    // testPizza.SizeCalc(sizeInput);
+    // testPizza.Toppings(pep,veg,plain);
+    // testPizza.finalPrice();
+    // displayText(testPizza.sumPrice);
+    // $('form#pizzaBuilder')[0].reset();
 })
 });
+
+
