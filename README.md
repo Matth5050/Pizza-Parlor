@@ -1,5 +1,5 @@
-Describe: pizza()
+Describe: basePrice()
 
-Test: 'It should be able to distinguish between two inputs (a or b) and return unique info about that selection"
-Code: pizza(a);
+Test: 'It should return the base price of a pizza (5$)"
+Code: basePrice();
 Expected outcome: "you ordred pizza a for 5 dollars"
