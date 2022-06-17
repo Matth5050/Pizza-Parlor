@@ -28,7 +28,9 @@
 
 ## License
 
-[MIT](https://www.mit.edu/~amini/LIC
+[MIT](https://www.mit.edu/~amini/LICNSE.md)
+
+Copyright (C) 2022 Matthew Herbert
 ```
 Describe: basePrice()
 
