@@ -1,3 +1,35 @@
+# Pizza Parlor
+
+## View the page [here]()
+
+#### Use the pizza parlors interactive website to order a pizza or two!
+
+## Technologies Used
+
+- HTML
+
+- JavaScript
+
+- CSS
+
+- Bootstrap
+
+## How to View
+
+1. Clone this repository to your desktop
+2. Navigate to the top level of the directory
+3. Open the index.html file in your browser of choice
+
+- Alternatively, click the GitHub pages link at the top of this README to view
+
+## Known Bugs/Issues
+
+- No known bugs or issues are present
+
+## License
+
+[MIT](https://www.mit.edu/~amini/LIC
+```
 Describe: basePrice()
 
 Test: 'It should return the base price of a pizza (5$)"
