@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Pizza Parlor</h1>
+<h3>Please select the size and toppings you want!</h3>
+<div class="container">
+    <div class="jumbotron">
+    </div>
+    <form id="pizzaBuilder">
+      <div class="form-group">
+        <div class="size-container">
+            <div class="radio">
+                <h3>Select Size:</h3>
+                <label>
+                    <input type="radio" name="size" value="small" checked>
+                    Small
+                </label>
+                <label>
+                    <input type="radio" name="size" value="large">
+                    Large
+                </label>
+            </div>
+        </div>
+        <div class="toppings">
+            <h3>Select Toppings:</h3>
+            <input type="checkbox" name="work-transportation" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" name="work-transportation" value="veggies">Veggies<br>
+            <input type="checkbox" name="work-transportation" value="plain">No Toppings<br>
+        </div>
+      <button id="button1" type="submit">Preview Order!</button>
+    </form>
+    <span id="orderReview">
+      <p><b>Your pizza:</b></p>
+    </span>
+  </div>
+</body>
+</html>
