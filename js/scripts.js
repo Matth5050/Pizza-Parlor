@@ -1,79 +1,53 @@
-// function Pizza () {
-//     this.Size = 0;
-//     this.basePrice = 0;
-//     this.toppings = 0;
-//     this.sumPrice = 0;
-// }
+function Pizza () {
+    this.Size = 0;
+    this.basePrice = 0;
+    this.toppings = 0;
+    this.sumPrice = 0;
+}
 
-// Pizza.prototype.BasePrice = function(price) {
-//     this.basePrice += 5;
-// }
-
-// let a = false;
-// let b = true;
-
-// Pizza.prototype.Toppings = function (a,b) {
-//     if (a === true && b === true) {
-//         this.toppings += 6;
-//     } else if (a === true && b !== true) {
-//         this.toppings += 4;
-//     } else if (a !== true && b === true) {
-//         this.toppings += 3;
-//     } else {
-//         this.toppings = this.toppings;
-//     }
-// }
-
-// let small = '1';
-// let large = '0';
-
-// Pizza.prototype.SizeCalc = function(size) {
-//     let input = size
-//     if (input === 'small') {
-//     this.Size += 3;
-//     } else if (input === 'large') {
-//         this.Size += 6;
-//     }
-// }
-
-// Pizza.prototype.finalPrice = function(size) {
-//     this.sumPrice += this.basePrice + this.toppings + this.Size;
-// }
-
-// // let testPizza = new Pizza(0,0,0);
-
-// function calc () {
-// testPizza.BasePrice();
-// testPizza.Toppings(a,b);
-// testPizza.SizeCalc();
-// testPizza.finalPrice();
-// console.log(testPizza.sumPrice);
-// }
-
-let test = $("input:checkbox[name=size]:checked").each(function() {
-    const workTransportationMode = $(this).val();
-    return workTransportationMode;
-})
+Pizza.prototype.BasePrice = function(price) {
+    this.basePrice += 5;
+}
 
 
+Pizza.prototype.Toppings = function (a,b,c) {
+    if (c !== undefined) {
+        this.toppings = this.toppings;
+    } if (a !== undefined && b !== undefined) {
+        this.toppings += 6;
+    } else if (a !== undefined && b === undefined) {
+        this.toppings += 4;
+    } else if (a === undefined && b !== undefined) {
+        this.toppings += 3;
+    }   
+}
 
+Pizza.prototype.SizeCalc = function(size) {
+    if (size === 'small') {
+    this.Size += 3;
+    } else if (size === 'large') {
+        this.Size += 6;
+    }
+}
+
+Pizza.prototype.finalPrice = function(size) {
+    this.sumPrice += this.basePrice + this.toppings + this.Size;
+}
 
 $(document).ready(function() {
   $('form#pizzaBuilder').submit(function(event) {
     event.preventDefault();
-    // const sizeInput = $("input:radio[name=size]:checked").val();
-    let listArray = [];
-    $("input:checkbox[name=toppings]:checked").each(function(){
-        const w = $(this).val();
-        listArray.push(w);
-    })
-console.log(listArray)
-})
-})
-    // const toppingInput = $("input:checkbox[name=toppings]:checked").val();
-
+    let testPizza = new Pizza(0,0,0);
+    const sizeInput = $("input:radio[name=size]:checked").val();
+    const pep = $("input:checkbox[name=pep]:checked").val();
+    const veg = $("input:checkbox[name=veg]:checked").val();
+    const plain = $("input:checkbox[name=plain]:checked").val();
     
-
-
-    // console.log(sizeInput);
-    // console.log(test);
+    testPizza.BasePrice();
+    testPizza.SizeCalc(sizeInput);
+    testPizza.Toppings(pep,veg,plain);
+    testPizza.finalPrice();
+    $('form#pizzaBuilder')[0].reset();
+    console.log(testPizza.sumPrice);
+})
+});
