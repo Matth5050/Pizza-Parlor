@@ -17,6 +17,11 @@
     margin-bottom: 20px;
 }
 
+
+.order-containers2, .order-containers3 {
+    display: none;
+}
+
 #output {
     margin-top: 20px;
     font-weight: bold;

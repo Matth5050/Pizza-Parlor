@@ -17,30 +17,89 @@
 </div>
 <div class="container-div">
     <div class="container">
-        <form id="pizzaBuilder">
         <div class="form-group">
-            <div class="size-container">
-                <div class="radio">
-                    <h3>Select Size:</h3>
-                    <label>
-                        <input type="radio" name="size" value="small" checked>
-                        Small
-                    </label>
-                    <label>
-                        <input type="radio" name="size" value="large">
-                        Large
-                    </label>
+            <label for="count">How many pizza would you like?</label>
+            <select class="form-number" id="count">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            <div class="row">
+                <div class="order-containers col-4">
+                    <form id="pizzaBuilder">
+                        <div class="size-container">
+                            <div class="radio">
+                                <h3>Select Size:</h3>
+                                <label>
+                                    <input type="radio" name="size" value="small" checked>
+                                    Small
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="large">
+                                    Large
+                                </label>
+                            </div>
+                        </div>
+                        <div class="toppings">
+                            <h3>Select Toppings:</h3>
+                            <input type="checkbox" name="pep" value="pepperoni">Pepperoni<br>
+                            <input type="checkbox" name="veg" value="veggies">Veggies<br>
+                            <input type="checkbox" name="plain" value="plain">No Toppings<br>
+                        </div>
+                        <button id="button1" type="submit" class="btn btn-outline-primary">Preview Order!</button>
+                    </form>
                 </div>
-            </div>
-            <div class="toppings">
-                <h3>Select Toppings:</h3>
-                <input type="checkbox" name="pep" value="pepperoni">Pepperoni<br>
-                <input type="checkbox" name="veg" value="veggies">Veggies<br>
-                <input type="checkbox" name="plain" value="plain">No Toppings<br>
-            </div>
-        <button id="button1" type="submit" class="btn btn-outline-primary">Preview Order!</button>
-        </form>
+                <div class="order-containers2 col-4">
+                    <form id="pizzaBuilder">
+                        <div class="size-container">
+                            <div class="radio">
+                                <h3>Select Size:</h3>
+                                <label>
+                                    <input type="radio" name="size" value="small" checked>
+                                    Small
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="large">
+                                    Large
+                                </label>
+                            </div>
+                        </div>
+                        <div class="toppings">
+                            <h3>Select Toppings:</h3>
+                            <input type="checkbox" name="pep" value="pepperoni">Pepperoni<br>
+                            <input type="checkbox" name="veg" value="veggies">Veggies<br>
+                            <input type="checkbox" name="plain" value="plain">No Toppings<br>
+                        </div>
+                        <button id="button1" type="submit" class="btn btn-outline-primary">Preview Order!</button>
+                    </form>
+                </div>
+                <div class="order-containers3 col-4">
+                    <form id="pizzaBuilder">
+                        <div class="size-container">
+                            <div class="radio">
+                                <h3>Select Size:</h3>
+                                <label>
+                                    <input type="radio" name="size" value="small" checked>
+                                    Small
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="large">
+                                    Large
+                                </label>
+                            </div>
+                        </div>
+                        <div class="toppings">
+                            <h3>Select Toppings:</h3>
+                            <input type="checkbox" name="pep" value="pepperoni">Pepperoni<br>
+                            <input type="checkbox" name="veg" value="veggies">Veggies<br>
+                            <input type="checkbox" name="plain" value="plain">No Toppings<br>
+                        </div>
+                        <button id="button1" type="submit" class="btn btn-outline-primary">Preview Order!</button>
+                    </form>
+                </div>
+            </div> <!-- End Row -->
         <p id="output">Your order: <span id="outputText"></span></p>
+    </div>
     </div>
 </div>
   <div class="footer"></div>
