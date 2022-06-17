@@ -1,4 +1,5 @@
 function Pizza () {
+    this.Size = 0;
     this.basePrice = 0;
     this.toppings = 0;
     this.sumPrice = 0;
@@ -23,8 +24,20 @@ Pizza.prototype.Toppings = function (a,b) {
     }
 }
 
-Pizza.prototype.finalPrice = function(final) {
-    this.sumPrice = this.basePrice + this.toppings;
+let small = '1';
+let large = '0';
+
+Pizza.prototype.finalPrice = function(size) {
+    let input = size
+    if (input === '1') {
+    this.Size += 3;
+    } else if (input === '0') {
+        this.Size += 6;
+    }
+}
+
+Pizza.prototype.finalPrice = function(size) {
+    this.sumPrice += this.basePrice + this.toppings + this.smallSize;
 }
 
 let testPizza = new Pizza(0,0,0);
@@ -32,7 +45,7 @@ let testPizza = new Pizza(0,0,0);
 function calc () {
 testPizza.BasePrice();
 testPizza.Toppings(a,b);
-testPizza.finalPrice();
+testPizza.finalPrice('0');
 console.log(testPizza.sumPrice);
 }
 
