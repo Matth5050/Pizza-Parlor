@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/scripts.js"></script>
     <title>Document</title>
 </head>
 <body>
-<h1>Pizza Parlor</h1>
-<h3>Please select the size and toppings you want!</h3>
-<div class="container">
-    <div class="jumbotron">
-    </div>
-    <form id="pizzaBuilder">
-      <div class="form-group">
-        <div class="size-container">
-            <div class="radio">
-                <h3>Select Size:</h3>
-                <label>
-                    <input type="radio" name="size" value="small" checked>
-                    Small
-                </label>
-                <label>
-                    <input type="radio" name="size" value="large">
-                    Large
-                </label>
+<div class="jumbotron">
+    <h1 class="header">Pizza Parl<img id="pic" src="https://pizzacharlottenc.com/wp-content/uploads/2020/08/pepperoni-pizza.png" alt="pizza"></a>r</h1>
+    <h3 class="header">Please select the size and toppings you want!</h3>
+</div>
+<div class="container-div">
+    <div class="container">
+        <form id="pizzaBuilder">
+        <div class="form-group">
+            <div class="size-container">
+                <div class="radio">
+                    <h3>Select Size:</h3>
+                    <label>
+                        <input type="radio" name="size" value="small" checked>
+                        Small
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="large">
+                        Large
+                    </label>
+                </div>
             </div>
-        </div>
-        <div class="toppings">
-            <h3>Select Toppings:</h3>
-            <input type="checkbox" name="work-transportation" value="pepperoni">Pepperoni<br>
-            <input type="checkbox" name="work-transportation" value="veggies">Veggies<br>
-            <input type="checkbox" name="work-transportation" value="plain">No Toppings<br>
-        </div>
-      <button id="button1" type="submit">Preview Order!</button>
-    </form>
-    <span id="orderReview">
-      <p><b>Your pizza:</b></p>
-    </span>
-  </div>
+            <div class="toppings">
+                <h3>Select Toppings:</h3>
+                <input type="checkbox" name="pep" value="pepperoni">Pepperoni<br>
+                <input type="checkbox" name="veg" value="veggies">Veggies<br>
+                <input type="checkbox" name="plain" value="plain">No Toppings<br>
+            </div>
+        <button id="button1" type="submit" class="btn btn-outline-primary">Preview Order!</button>
+        </form>
+        <p id="output">Your order: <span id="outputText"></span></p>
+    </div>
+</div>
+  <div class="footer"></div>
 </body>
 </html>

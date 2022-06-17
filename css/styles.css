@@ -1,0 +1,33 @@
+.jumbotron {
+    background-color: green;
+}
+
+.header {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#pic {
+    height: 10%;
+    width:2%;
+}
+
+.toppings {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#output {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#outputText {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: red;
+    height: 250px;
+    max-width: 100%;
+}
