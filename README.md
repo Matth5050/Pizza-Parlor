@@ -24,7 +24,7 @@
 
 ## Known Bugs/Issues
 
-- No known bugs or issues are present
+- Currently the output text displays only the order information for one pizza. However, output price is still correct.
 
 ## License
 
