@@ -35,8 +35,6 @@ Pizza.prototype.finalPrice = function(size) {
     this.sumPrice += this.basePrice + this.toppings + this.Size;
 }
 
-
-
 // UI Logic
 
 function displayText(price) {
@@ -117,15 +115,8 @@ $(document).ready(function() {
 
   $('form#pizzaBuilder').submit(function(event) {
     event.preventDefault();
-    // const pieCount = $("#count").val();
     multiPizza($("#count").val());
-    // testPizza.BasePrice();
-    // testPizza.SizeCalc(sizeInput);
-    // testPizza.Toppings(pep,veg,plain);
-    // testPizza.finalPrice();
-    // displayText(testPizza.sumPrice);
-    // $('form#pizzaBuilder')[0].reset();
-})
+    })
 });
 
 
