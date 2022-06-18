@@ -23,15 +23,21 @@
 
 #output {
     margin-top: 20px;
+}
+
+#outputText, #outputText2, #outputText3, #outputText4 {
+    text-decoration: underline;
     font-weight: bold;
 }
 
-#outputText {
-    text-decoration: underline;
+
+p {
+    display: none;
 }
 
 .footer {
     background-color: red;
     height: 250px;
     max-width: 100%;
+    margin-top: 20px;
 }

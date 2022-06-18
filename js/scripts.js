@@ -43,13 +43,49 @@ function displayText(price) {
     const veg = $("input:checkbox[name=veg]:checked").val();
     const plain = $("input:checkbox[name=plain]:checked").val();
     if (plain !== undefined) {
-        $('#outputText').text(sizeInput + ' ' + plain + ' ' + 'for ' + price + '$')
+        $('#outputText').text(sizeInput + ' ' + plain);
+        $('#outputText4').text('Total Price ' + price + '$');
     } else if (pep !== undefined && veg !== undefined) {
-        $('#outputText').text(sizeInput + ' '  + pep + ' and' + ' ' + veg + ' for ' + price + '$');
+        $('#outputText').text(sizeInput + ' '  + pep + ' and' + ' ' + veg);
+        $('#outputText4').text('Total Price ' + price + '$');
     } else if (pep !== undefined && veg === undefined) {
-        $('#outputText').text(sizeInput + ' '  + pep  + ' for ' + price + '$');
+        $('#outputText').text(sizeInput + ' '  + pep);
+        $('#outputText4').text('Total Price ' + price + '$');
     } else if (pep === undefined && veg !== undefined) {
-        $('#outputText').text(sizeInput + ' '  + veg + ' for ' + price + '$');
+        $('#outputText').text(sizeInput + ' '  + veg);
+        $('#outputText4').text('Total Price ' + price + '$');
+    }   
+}
+
+function displayText2() {
+    const sizeInput2 = $("input:radio[name=size2]:checked").val();
+    const pep2 = $("input:checkbox[name=pep2]:checked").val();
+    const veg2 = $("input:checkbox[name=veg2]:checked").val();
+    const plain2 = $("input:checkbox[name=plain2]:checked").val();
+    if (plain2 !== undefined) {
+        $('#outputText2').text(sizeInput2 + ' ' + plain2)
+    } else if (pep2 !== undefined && veg2 !== undefined) {
+        $('#outputText2').text(sizeInput2 + ' '  + pep2 + ' and' + ' ' + veg2);
+    } else if (pep2 !== undefined && veg2 === undefined) {
+        $('#outputText2').text(sizeInput2 + ' '  + pep2);
+    } else if (pep2 === undefined && veg2 !== undefined) {
+        $('#outputText2').text(sizeInput2 + ' '  + veg2);
+    }   
+}
+
+function displayText3() {
+    const sizeInput3 = $("input:radio[name=size3]:checked").val();
+    const pep3 = $("input:checkbox[name=pep3]:checked").val();
+    const veg3 = $("input:checkbox[name=veg3]:checked").val();
+    const plain3 = $("input:checkbox[name=plain3]:checked").val();
+    if (plain3 !== undefined) {
+        $('#outputText3').text(sizeInput3 + ' ' + plain3)
+    } else if (pep3 !== undefined && veg3 !== undefined) {
+        $('#outputText3').text(sizeInput3 + ' '  + pep3 + ' and' + ' ' + veg3);
+    } else if (pep3 !== undefined && veg3 === undefined) {
+        $('#outputText3').text(sizeInput3 + ' '  + pep3);
+    } else if (pep3 === undefined && veg3 !== undefined) {
+        $('#outputText3').text(sizeInput3 + ' '  + veg3);
     }   
 }
 
@@ -77,12 +113,20 @@ $(document).ready(function() {
         const pep = $("input:checkbox[name=pep]:checked").val();
         const veg = $("input:checkbox[name=veg]:checked").val();
         const plain = $("input:checkbox[name=plain]:checked").val();
+        const pep2 = $("input:checkbox[name=pep2]:checked").val();
+        const veg2 = $("input:checkbox[name=veg2]:checked").val();
+        const plain2 = $("input:checkbox[name=plain2]:checked").val();
+        const pep3 = $("input:checkbox[name=pep3]:checked").val();
+        const veg3 = $("input:checkbox[name=veg3]:checked").val();
+        const plain3 = $("input:checkbox[name=plain3]:checked").val();
         if (count === '1') {
             Pizza1.BasePrice();
             Pizza1.SizeCalc(sizeInput);
             Pizza1.Toppings(pep,veg,plain);
             Pizza1.finalPrice();
             displayText(Pizza1.sumPrice);
+            $('#output').slideDown();
+            $('#output4').slideDown();
             $('form#pizzaBuilder')[0].reset(); 
         } else if (count === '2') {
             Pizza1.BasePrice();
@@ -91,9 +135,13 @@ $(document).ready(function() {
             Pizza1.finalPrice(); 
             Pizza2.BasePrice();
             Pizza2.SizeCalc(sizeInput2);
-            Pizza2.Toppings(pep,veg,plain);
+            Pizza2.Toppings(pep2,veg2,plain2);
             Pizza2.finalPrice();
+            displayText2();
             displayText(Pizza1.sumPrice + Pizza2.sumPrice);
+            $('#output').slideDown();
+            $('#output2').slideDown();
+            $('#output4').slideDown();
             $('form#pizzaBuilder')[0].reset();
         } else if (count === '3') {
             Pizza1.BasePrice();
@@ -102,19 +150,26 @@ $(document).ready(function() {
             Pizza1.finalPrice();
             Pizza2.BasePrice();
             Pizza2.SizeCalc(sizeInput2);
-            Pizza2.Toppings(pep,veg,plain);
+            Pizza2.Toppings(pep2,veg2,plain2);
             Pizza2.finalPrice();
             Pizza3.BasePrice();
             Pizza3.SizeCalc(sizeInput3);
-            Pizza3.Toppings(pep,veg,plain);
+            Pizza3.Toppings(pep3,veg3,plain3);
             Pizza3.finalPrice();
-            displayText(Pizza1.sumPrice + Pizza2.sumPrice + Pizza3.sumPrice)
+            displayText2();
+            displayText3();
+            displayText(Pizza1.sumPrice + Pizza2.sumPrice + Pizza3.sumPrice);
+            $('#output').slideDown();
+            $('#output2').slideDown();
+            $('#output3').slideDown();
+            $('#output4').slideDown();
             $('form#pizzaBuilder')[0].reset(); 
         }
     }
 
   $('form#pizzaBuilder').submit(function(event) {
     event.preventDefault();
+
     multiPizza($("#count").val());
     })
 });
